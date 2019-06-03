@@ -1,2 +1,5 @@
 collections/out/
 .idea
+
+**/.idea/
+**/out/
