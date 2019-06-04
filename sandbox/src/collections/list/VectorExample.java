@@ -1,4 +1,4 @@
 package collections.list;
 
-public class ArrayList {
+public class VectorExample {
 }

@@ -1,4 +1,4 @@
 package collections.set.sortedSet;
 
-public class TreeSet {
+public class TreeSetExample {
 }

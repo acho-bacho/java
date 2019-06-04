@@ -1,4 +1,4 @@
 package collections.list;
 
-public class Vector {
+public class StackExample {
 }

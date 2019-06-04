@@ -1,6 +1,6 @@
 package collections.set;
 
-public class HashSet {
+public class HashSetExample {
     public static void main(String[] args) {
         System.out.println("hashSet");
     }

@@ -1,4 +1,4 @@
 package collections.queue.deque;
 
-public class ArrayDeque {
+public class ArrayDequeExample {
 }
