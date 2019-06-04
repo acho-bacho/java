@@ -6,17 +6,23 @@ public class ArrayListExample {
 
     public static void main(String[] args) {
 
-        List<String> list = new ArrayList<>();
+        List<String> al = new ArrayList<>();
 
-        list.add("Ravi");
-        list.add("Vijay");
-        list.add("Ravi");
-        list.add("Ajay");
+        al.add("Ravi");
+        al.add("Vijay");
+        al.add("Ravi");
+        al.add("Ajay");
 
-        Iterator itr = list.iterator();
+        Iterator itr = al.iterator();
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }
+
+        for (String s : al) {
+            System.out.println(s);
+        }
+
+        System.out.println("get element at " + al.get(0));
     }
 }
 
