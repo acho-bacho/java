@@ -2,7 +2,7 @@ package collections.set;
 
 import java.util.*;
 
-public class LinHashSetExample {
+public class LinkedHashSetExample {
 
 
     public static void main(String args[]) {
