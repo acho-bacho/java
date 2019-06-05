@@ -2,6 +2,8 @@ package collections.list;
 
 import java.util.*;
 
+// legacy
+// slow because sync
 // similar to ArrayList but synchronized
 // has some methods not in the Collection framework
 

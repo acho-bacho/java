@@ -6,9 +6,9 @@ public class PriorityQueueExample {
     public static void main(String args[]) {
         PriorityQueue<String> queue = new PriorityQueue<String>();
 
-        queue.add("Boris");
-        queue.add("Angel");
         queue.add("Cvetan");
+        queue.add("Angel");
+        queue.add("Boris");
         queue.add("Dimo");
 
         System.out.println("head:" + queue.element());
@@ -21,7 +21,7 @@ public class PriorityQueueExample {
             System.out.println(itr.next());
         }
 
-        queue.remove();
+        queue.poll();
         queue.poll();
 
         System.out.println("after removing two elements:");
@@ -37,7 +37,7 @@ public class PriorityQueueExample {
         prioQueue.add(11);
         prioQueue.add(1);
         prioQueue.add(3);
-        
+
         itr = prioQueue.iterator();
         while (itr.hasNext()) {
             System.out.println(itr.next());

@@ -3,15 +3,15 @@ package collections.set;
 import java.util.*;
 
 public class LinkedHashSetExample {
-
-
     public static void main(String args[]) {
-        LinkedHashSet<String> set = new LinkedHashSet<String>();
-        set.add("Ravi");
-        set.add("Vijay");
-        set.add("Ravi");
-        set.add("Ajay");
-        Iterator<String> itr = set.iterator();
+        LinkedHashSet<String> al = new LinkedHashSet<String>();
+
+        al.add("Ravi");
+        al.add("Vijay");
+        al.add("Ravi");
+        al.add("Ajay");
+
+        Iterator<String> itr = al.iterator();
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }

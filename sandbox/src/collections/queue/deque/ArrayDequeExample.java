@@ -2,22 +2,28 @@ package collections.queue.deque;
 
 import java.util.*;
 
-// ArrayDeque is faster than ArrayList and Stack and has no capacity restrictions.
+// ArrayDeque is faster than LinkedList and Stack and has no capacity restrictions.
 
 public class ArrayDequeExample {
+
     public static void main(String[] args) {
-
-        //Creating Deque and adding elements
         Deque<String> deque = new ArrayDeque<String>();
-        deque.add("Gautam");
-        deque.add("Karan");
-        deque.add("Ajay");
-        deque.addLast("Angel");
-        deque.addFirst("AAA");
 
-        //Traversing elements
-        for (String str : deque) {
-            System.out.println(str);
+        deque.offer("arvind");
+        deque.offer("vimal");
+        deque.add("mukul");
+        deque.offerFirst("jai");
+        System.out.println("After offerFirst Traversal...");
+        for (String s : deque) {
+            System.out.println(s);
+        }
+
+        //deque.poll();
+        //deque.pollFirst();//it is same as poll()
+        deque.pollLast();
+        System.out.println("After pollLast() Traversal...");
+        for (String s : deque) {
+            System.out.println(s);
         }
     }
 }
