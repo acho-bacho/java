@@ -35,10 +35,7 @@ public class HeapSort {
         {
             //after heapify arr[0] is largest, so put it to end
             // Move current root to end
-            int largest = arr[0];
-            arr[0] = arr[end];
-            arr[end] = largest;
-
+            swap(arr, 0, end);
             // call max heapify on the reduced heap (reduced as end is --)
             heapify(arr, 0, end);
         }
@@ -46,7 +43,7 @@ public class HeapSort {
 
     // To heapify a subtree rooted with node i which is
     // an index in arr[].
-    static void heapify(int[] arr, int root, int size)
+    static void heapify(int[] arr, int root, int heapSize)
     {
         // pos of largest element
         int largest = root; // Initialize largest as root
@@ -54,12 +51,12 @@ public class HeapSort {
         int r = 2*root + 2; // right = 2*i + 2
 
         // If left child is larger than root
-        if (l < size && arr[l] > arr[largest]) {
+        if (l < heapSize && arr[l] > arr[largest]) {
             largest = l;
         }
 
         // If right child is larger than largest so far
-        if (r < size && arr[r] > arr[largest]) {
+        if (r < heapSize && arr[r] > arr[largest]) {
             largest = r;
         }
 
@@ -67,12 +64,19 @@ public class HeapSort {
         if (largest != root)
         {
             //swap so that root is bigger than children
-            int tmp = arr[root];
-            arr[root] = arr[largest];
-            arr[largest] = tmp;
+            swap(arr, root, largest);
+
             System.out.println("** internal swap  = " + Arrays.toString(arr));
+
             // Recursively heapify the affected sub-tree
-            heapify(arr, largest, size);
+            heapify(arr, largest, heapSize);
         }
     }
-}
+
+    static void swap(int[] arr, int i, int j) {
+        System.out.println(String.format("Swappping %d with %d", arr[i], arr[j]));
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+        System.out.println("After swap " + Arrays.toString(arr));
+    }}
