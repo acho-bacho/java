@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 public class InsertionSort {
 
-
     public static void main(String[] args) {
         int[] input = {6, 4, 3, 7, 1, 12, 9, 8, 9, 13};
 
@@ -30,7 +29,6 @@ public class InsertionSort {
                 j--;
             }
         }
-
         System.out.println("done");
     }
 
