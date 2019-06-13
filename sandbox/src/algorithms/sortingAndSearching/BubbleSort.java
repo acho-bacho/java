@@ -2,6 +2,8 @@ package algorithms.sortingAndSearching;
 
 import java.util.Arrays;
 
+//  worst-case and average complexity of О(n2) -> bad
+
 public class BubbleSort {
 
     public static void main(String[] args) {
