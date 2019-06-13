@@ -30,9 +30,6 @@ public class MergeSort {
             // 4. Merge the two halves sorted in step 2 and 3:
             merge(arr, l, m, r);
         }
-
-
-        System.out.println("done");
     }
 
     static void merge(int[] arr, int l, int m, int r) {
@@ -56,12 +53,11 @@ public class MergeSort {
 
         // sort them
 
-
         // left + right counters
         int i = 0, j = 0;
-        int k = l;
+        int k;
 
-        for (; k <= r && i<n1 && j<n2; k++) {
+        for (k = l; (k <= r) && (i < n1) && (j < n2); k++) {
             if (L[i] < R[j]) {
                 arr[k] = L[i];
                 i++;
@@ -72,10 +68,10 @@ public class MergeSort {
         }
 
         //add leftovers
-        while (i<n1) {
+        while (i < n1) {
             arr[k++] = L[i++];
         }
-        while (j<n2) {
+        while (j < n2) {
             arr[k++] = R[j++];
         }
 
