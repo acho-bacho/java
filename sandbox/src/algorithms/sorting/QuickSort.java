@@ -1,4 +1,4 @@
-package algorithms.sortingAndSearching;
+package algorithms.sorting;
 
 
 // https://www.geeksforgeeks.org/quick-sort/
