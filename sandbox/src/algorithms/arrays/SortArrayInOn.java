@@ -18,19 +18,19 @@ public class SortArrayInOn {
         int size = inputArr.length;
         int[] result = new int[size];
 
-        int i = 0, r = size - 1, n = 0;
+        int l = 0, r = size - 1, n = 0;
 
-        for (; i != r; n++) {
-            if (inputArr[i] < inputArr[r]) {
-                result[n] = inputArr[i];
-                i++;
+        for (; l != r; n++) {
+            if (inputArr[l] < inputArr[r]) {
+                result[n] = inputArr[l];
+                l++;
             } else {
                 result[n] = inputArr[r];
                 r--;
             }
         }
 
-        result[n] = inputArr[i];
+        result[n] = inputArr[l];
 
         return result;
     }
