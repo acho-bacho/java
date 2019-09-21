@@ -1,12 +1,12 @@
-package data_structures;
+package data_structures.linkedList;
 
  class Node {
     public int data;
     public Node next;
 
     public Node(int data) {
+        this();
         this.data = data;
-        this.next = null;
     }
 
     public Node() {
@@ -16,7 +16,12 @@ package data_structures;
     public void show() {
         System.out.println("{ " + data + " } ");
     }
-}
+
+     @Override
+     public String toString() {
+         return Integer.toString(data);
+     }
+ }
 
 public class LinkedList {
     private Node head;
@@ -28,7 +33,6 @@ public class LinkedList {
     // used to insert a node at the start of linked list
     public void insertFirst(int data) {
         Node newNode = new Node(data);
-        newNode.data = data;
         newNode.next = head;
         head = newNode;
     }
@@ -56,7 +60,6 @@ public class LinkedList {
             tmp = tmp.next;
         }
         if(tmp.next!=null) {
-
             Node newNode = new Node(data);
             newNode.next = tmp.next;
             tmp.next = newNode;
@@ -65,28 +68,55 @@ public class LinkedList {
 
     // used to insert a node at the start of linked list
     public void insertLast(int data) {
-        Node current = head;
-        while (current.next != null) {
-            current = current.next; // we'll loop until current.next is null
+        Node last = head;
+        while (last.next != null) {
+            last = last.next; // we'll loop until current.next is null
         }
-        Node newNode = new Node();
-        newNode.data = data;
-        current.next = newNode;
+        Node newNode = new Node(data);
+        last.next = newNode;
     }
 
     // For printing Linked List
     public void printLinkedList() {
         System.out.println("Printing LinkedList (head --> last) ");
         Node current = head;
+        StringBuilder sb = new StringBuilder();
         while (current != null) {
-            current.show();
+            sb.append(current.toString()).append("->");
             current = current.next;
         }
-        System.out.println();
+        System.out.println(sb);
     }
 
+    public void reverse(){
+        Node prev = null;
+        Node current = head;
+
+        while(current!=null && current.next!=null){
+            Node next = current.next;
+
+            current.next = prev;
+
+            //move ptr
+            prev = current;
+            current = next;
+        }
+
+        //at the end set HEAD
+        head = current;
+        if(head!=null)
+            head.next = prev;
+    }
 
     public static void main(String[] args) {
-        
+        LinkedList list = new LinkedList();
+
+        list.insertFirst(4);
+        list.insertFirst(2);
+        list.insertFirst(1);
+
+        list.insertAfter(new Node(2), 3);
+        list.insertLast(5);
+        list.printLinkedList();
     }
 }

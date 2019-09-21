@@ -1,4 +1,6 @@
-package data_structures;
+package data_structures.stack;
+
+import java.util.Arrays;
 
 public class StackCustom {
     int size;
@@ -50,7 +52,9 @@ public class StackCustom {
     public boolean isFull() {
         return (size - 1 == top);
     }
-
+    public void print(){
+        System.out.println(Arrays.toString(arr));
+    }
     public static void main(String[] args) {
         StackCustom StackCustom = new StackCustom(10);
         StackCustom.pop();
