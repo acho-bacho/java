@@ -21,18 +21,40 @@ public class WeightedUniformStrings {
         //}
 
 
-        HashSet<Integer> weights  = getWieghts(s);
+        HashSet<Integer> weights = getWieghts(s);
 
-        for (int i = 0; i < queries.length ; i++) {
+        for (int i = 0; i < queries.length; i++) {
             result[i] = weights.contains(queries[i]) ? "Yes" : "No";
         }
 
         return result;
     }
 
-    private static HashSet<Integer> getWieghts(String s){
+    private static HashSet<Integer> getWieghts(String s) {
+        HashSet<Integer> result = new HashSet<Integer>();
+        int size = s.length();
+        char prev = ' ';
 
-        return null;
+        char curr;
+        int currStart = 0;
+        for (int i = 0; i < size; i++) {
+            curr = s.charAt(i);
+
+            if (curr != prev) {
+                // add prev
+                System.out.println(s.substring(currStart, i));
+                result.add((prev - 'a' + 1) * (i - currStart));
+
+                //start new uniform
+                currStart = i;
+            }
+            prev = curr;
+        }
+        //add last
+        System.out.println(s.substring(currStart));
+        result.add((prev - 'a' + 1) * (size - currStart));
+
+        return result;
     }
 
     public static void main(String[] args) {
