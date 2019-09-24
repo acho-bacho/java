@@ -8,6 +8,8 @@ public class HashSetExample {
         set.add("BBB");
         set.add("CCC");
         set.add("ABA");
+        set.add("ABA"); //dupl
+        set.add(new String("ABA"));
         //Traversing elements  
         Iterator<String> itr = set.iterator();
         while (itr.hasNext()) {

@@ -7,11 +7,13 @@ public class ClosestSum {
 
     public static void main(String[] args) {
         int[] arr = {10, 22, 28, 29, 30, 40};
-
         int sum = 54;
-
         printClosest(arr, sum);
-        printClosestBetter(arr, sum);
+
+
+        int[] arr2 = {1,4,5,6,7,30,41};
+        sum = 45;
+        printClosestBetter(arr2, sum);
     }
 
     // my simple solution

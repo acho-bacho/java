@@ -8,15 +8,14 @@ public class HeapSort {
 
     public static void main(String[] args) {
         //int[] input = {6, 4, 3, 7, 1, 12, 9, 8, 9, 13};
-        int[] input = {1,2,10,5};
+        int[] input = {1, 2, 10, 5};
 
         System.out.println("array " + Arrays.toString(input));
         sort(input);
         System.out.println("array " + Arrays.toString(input));
     }
 
-    static void sort(int arr[])
-    {
+    static void sort(int arr[]) {
         int size = arr.length;
 
         // Build heap (rearrange array)
@@ -31,8 +30,7 @@ public class HeapSort {
         // One by one extract an element from heap
         // and put it to ordered list at the end
         // 'end' marks the end of the heap, after that starts the sorted part
-        for (int end = (size-1); end>=0; end--)
-        {
+        for (int end = (size - 1); end >= 0; end--) {
             //after heapify arr[0] is largest, so put it to end
             // Move current root to end
             swap(arr, 0, end);
@@ -43,12 +41,11 @@ public class HeapSort {
 
     // To heapify a subtree rooted with node i which is
     // an index in arr[].
-    static void heapify(int[] arr, int root, int heapSize)
-    {
+    static void heapify(int[] arr, int rootPos, int heapSize) {
         // pos of largest element
-        int largest = root; // Initialize largest as root
-        int l = 2*root + 1; // left = 2*i + 1
-        int r = 2*root + 2; // right = 2*i + 2
+        int largest = rootPos; // Initialize largest as root
+        int l = 2 * rootPos + 1; // left = 2*i + 1
+        int r = 2 * rootPos + 2; // right = 2*i + 2
 
         // If left child is larger than root
         if (l < heapSize && arr[l] > arr[largest]) {
@@ -61,10 +58,9 @@ public class HeapSort {
         }
 
         // If largest is not root -> swaping -> new call of heapify()
-        if (largest != root)
-        {
+        if (largest != rootPos) {
             //swap so that root is bigger than children
-            swap(arr, root, largest);
+            swap(arr, rootPos, largest);
 
             System.out.println("** internal swap  = " + Arrays.toString(arr));
 
@@ -79,4 +75,5 @@ public class HeapSort {
         arr[i] = arr[j];
         arr[j] = tmp;
         System.out.println("After swap " + Arrays.toString(arr));
-    }}
+    }
+}

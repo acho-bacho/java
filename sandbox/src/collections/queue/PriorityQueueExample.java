@@ -4,7 +4,7 @@ import java.util.*;
 
 public class PriorityQueueExample {
     public static void main(String args[]) {
-        PriorityQueue<String> queue = new PriorityQueue<String>();
+        Queue<String> queue = new PriorityQueue<String>();
 
         queue.add("Cvetan");
         queue.add("Angel");
