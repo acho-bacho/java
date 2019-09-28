@@ -3,7 +3,8 @@ package hackerrank;
 import java.util.*;
 
 public class WeightedUniformStrings {
-
+    ;
+    ;
     static String[] weightedUniformStrings(String s, int[] queries) {
         String[] result = new String[queries.length];
         HashSet<Integer> weights = getWieghts(s);

@@ -65,7 +65,7 @@ public class WeightedStrings {
 
                 ArrayList<String> result = findHelper(weight-weights[i]*repeat, start,i);
                 if(result!=null) {
-                    String toAdd = String.valueOf(alphabet[i]).repeat(repeat);
+                    String toAdd = String.valueOf(alphabet[i]);//.repeat(repeat);
                     for (int j = 0; j < result.size(); j++) {
                         result.set(j, toAdd+result.get(j));
                     }
