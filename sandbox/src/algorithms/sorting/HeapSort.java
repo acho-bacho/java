@@ -2,78 +2,73 @@ package algorithms.sorting;
 
 import java.util.Arrays;
 
+//https://www.geeksforgeeks.org/heap-sort/
 // O(n log n)
 
 public class HeapSort {
-
-    public static void main(String[] args) {
-        //int[] input = {6, 4, 3, 7, 1, 12, 9, 8, 9, 13};
-        int[] input = {1, 2, 10, 5};
-
-        System.out.println("array " + Arrays.toString(input));
-        sort(input);
-        System.out.println("array " + Arrays.toString(input));
-    }
-
-    static void sort(int arr[]) {
-        int size = arr.length;
+    public void sort(int arr[]) {
+        int n = arr.length;
 
         // Build heap (rearrange array)
-        // (size / 2 - 1) is  the start root and we go backwards
-        for (int rootPos = size / 2 - 1; rootPos >= 0; rootPos--) {
-            heapify(arr, rootPos, size);
-        }
-
-        // after heapify the largest element is at pos 0
-        System.out.println("after first heapify = " + Arrays.toString(arr));
+        for (int i = n / 2 - 1; i >= 0; i--)
+            heapify(arr, n, i);
 
         // One by one extract an element from heap
-        // and put it to ordered list at the end
-        // 'end' marks the end of the heap, after that starts the sorted part
-        for (int end = (size - 1); end >= 0; end--) {
-            //after heapify arr[0] is largest, so put it to end
+        for (int i = n - 1; i >= 0; i--) {
             // Move current root to end
-            swap(arr, 0, end);
-            // call max heapify on the reduced heap (reduced as end is --)
-            heapify(arr, 0, end);
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+
+            // call max heapify on the reduced heap
+            //i is the size of the new heap
+            heapify(arr, i, 0);
         }
     }
 
     // To heapify a subtree rooted with node i which is
-    // an index in arr[].
-    static void heapify(int[] arr, int rootPos, int heapSize) {
-        // pos of largest element
-        int largest = rootPos; // Initialize largest as root
-        int l = 2 * rootPos + 1; // left = 2*i + 1
-        int r = 2 * rootPos + 2; // right = 2*i + 2
+    // an index in arr[]. n is size of heap
+    void heapify(int arr[], int n, int i) {
+        int largest = i; // Initialize largest as root
+        int l = 2 * i + 1; // left = 2*i + 1
+        int r = 2 * i + 2; // right = 2*i + 2
 
         // If left child is larger than root
-        if (l < heapSize && arr[l] > arr[largest]) {
+        if (l < n && arr[l] > arr[largest])
             largest = l;
-        }
 
         // If right child is larger than largest so far
-        if (r < heapSize && arr[r] > arr[largest]) {
+        if (r < n && arr[r] > arr[largest])
             largest = r;
-        }
 
-        // If largest is not root -> swaping -> new call of heapify()
-        if (largest != rootPos) {
-            //swap so that root is bigger than children
-            swap(arr, rootPos, largest);
-
-            System.out.println("** internal swap  = " + Arrays.toString(arr));
+        // If largest is not root
+        if (largest != i) {
+            int swap = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = swap;
 
             // Recursively heapify the affected sub-tree
-            heapify(arr, largest, heapSize);
+            heapify(arr, n, largest);
         }
     }
 
-    static void swap(int[] arr, int i, int j) {
-        System.out.println(String.format("Swappping %d with %d", arr[i], arr[j]));
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
-        System.out.println("After swap " + Arrays.toString(arr));
+    /* A utility function to print array of size n */
+    static void printArray(int arr[]) {
+        int n = arr.length;
+        for (int i = 0; i < n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+
+    // Driver program
+    public static void main(String args[]) {
+        int arr[] = {12, 11, 13, 5, 6, 7};
+        int n = arr.length;
+
+        HeapSort ob = new HeapSort();
+        ob.sort(arr);
+
+        System.out.println("Sorted array is");
+        printArray(arr);
     }
 }

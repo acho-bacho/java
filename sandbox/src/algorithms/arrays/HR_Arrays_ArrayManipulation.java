@@ -23,7 +23,7 @@ import java.util.Scanner;
 
 //  Time Complexity: O(n + m)
 // Space Complexity: O(n)
-public class AlgorithmicCrush {
+public class HR_Arrays_ArrayManipulation {
     // Complete the arrayManipulation function below.
     static long arrayManipulation(int n, int[][] queries) {
         long[] computation = new long[n];

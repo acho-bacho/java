@@ -35,19 +35,19 @@ public class MergeSort {
     static void merge(int[] arr, int l, int m, int r) {
 
         // get sizes of two arrays
-        int n1 = m - l + 1;
-        int n2 = r - m;
+        int s1 = m - l + 1;
+        int s2 = r - m;
 
         // create two arrays
-        int[] L = new int[n1];
-        int[] R = new int[n2];
+        int[] L = new int[s1];
+        int[] R = new int[s2];
 
         // fill the two arrays
-        for (int i = 0; i < n1; i++) {
+        for (int i = 0; i < s1; i++) {
             L[i] = arr[l + i];
         }
 
-        for (int j = 0; j < n2; j++) {
+        for (int j = 0; j < s2; j++) {
             R[j] = arr[m + j + 1];
         }
 
@@ -57,7 +57,7 @@ public class MergeSort {
         int i = 0, j = 0;
         int k;
 
-        for (k = l; (k <= r) && (i < n1) && (j < n2); k++) {
+        for (k = l; (k <= r) && (i < s1) && (j < s2); k++) {
             if (L[i] < R[j]) {
                 arr[k] = L[i];
                 i++;
@@ -68,10 +68,10 @@ public class MergeSort {
         }
 
         //add leftovers
-        while (i < n1) {
+        while (i < s1) {
             arr[k++] = L[i++];
         }
-        while (j < n2) {
+        while (j < s2) {
             arr[k++] = R[j++];
         }
 

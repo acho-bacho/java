@@ -1,6 +1,6 @@
 package algorithms.sorting;
 
-
+//Time Complexity O(logn)
 
 /* Java program to search an element  
    in a sorted and pivoted array

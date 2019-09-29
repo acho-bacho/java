@@ -1,5 +1,7 @@
 package algorithms.strings;
 
+//https://www.geeksforgeeks.org/reverse-an-array-without-affecting-special-characters/
+
 //Input:   str = "a,b$c"
 //Output:  str = "c,b$a"
 //Note that $ and , are not moved anywhere.

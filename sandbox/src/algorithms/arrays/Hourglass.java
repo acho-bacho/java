@@ -32,11 +32,11 @@ public class Hourglass {
     }
 
     static public void main(String[] args) {
-        int[][] mat = {{1, 2, 3, 0, 0},
-                {0, 0, 0, 0, 0},
-                {2, 1, 4, 0, 0},
-                {0, 0, 0, 0, 0},
-                {1, 1, 0, 1, 0}};
+        int[][] mat =  {{1, 2, 3, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {2, 1, 4, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {1, 1, 0, 1, 0}};
         int res = findMaxSum(mat);
         if (res == -1)
             System.out.println("Not possible");

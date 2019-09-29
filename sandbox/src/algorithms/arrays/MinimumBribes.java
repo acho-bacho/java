@@ -25,9 +25,9 @@ public class MinimumBribes {
 
     public static void main(String[] args) {
 
-        //int[] arr = {2, 1, 5, 3, 4};
+        int[] arr = {2, 1, 5, 3, 4};
         //int[] arr = {2, 5, 1, 3, 4};
-        int[] arr = {1, 2, 5, 3, 7, 8, 6, 4};
+        //int[] arr = {1, 2, 5, 3, 7, 8, 6, 4};
         System.out.println(Arrays.toString(arr));
 
         minBribes(arr);

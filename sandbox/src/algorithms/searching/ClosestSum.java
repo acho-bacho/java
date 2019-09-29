@@ -22,7 +22,7 @@ public class ClosestSum {
 
         int a = 0, b = 0;
         //let´s say 10 is the max
-        long delta = 10;
+        long delta = Integer.MAX_VALUE;
 
         for (int i = 0; i < arr.length; i++) {
 

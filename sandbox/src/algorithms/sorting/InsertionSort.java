@@ -3,6 +3,7 @@ package algorithms.sorting;
 import java.util.Arrays;
 
 // О(n2)
+//https://www.geeksforgeeks.org/insertion-sort/
 
 public class InsertionSort {
 
