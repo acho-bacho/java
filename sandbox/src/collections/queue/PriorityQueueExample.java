@@ -15,10 +15,13 @@ public class PriorityQueueExample {
         System.out.println("head:" + queue.peek());
 
         System.out.println("iterating the queue elements:");
-
         Iterator itr = queue.iterator();
         while (itr.hasNext()) {
             System.out.println(itr.next());
+        }
+        System.out.println("removing -------------------------");
+        while (!queue.isEmpty()) {
+            System.out.println(queue.remove());
         }
 
         queue.poll();
@@ -42,7 +45,10 @@ public class PriorityQueueExample {
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }
-
+        System.out.println("removing");
+        while (!prioQueue.isEmpty()) {
+            System.out.println(prioQueue.remove());
+        }
 
     }
 }

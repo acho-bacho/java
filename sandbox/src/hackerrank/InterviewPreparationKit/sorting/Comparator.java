@@ -4,11 +4,11 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
-class Checker implements Comparator<Player> {
+class MyComparator implements Comparator<Player> {
     @Override
     public int compare(Player p1, Player p2) {
         if (p1.score == p2.score) {
-            return p1.name.compareTo(p2.name);
+            return p1.name.compareTo(p2.name); // alphabetically ascending
         } else {
             return p2.score - p1.score; // descending order
         }
@@ -31,14 +31,14 @@ class Solution {
         int n = scan.nextInt();
 
         Player[] player = new Player[n];
-        Checker checker = new Checker();
+        MyComparator myComparator = new MyComparator();
 
         for (int i = 0; i < n; i++) {
             player[i] = new Player(scan.next(), scan.nextInt());
         }
         scan.close();
 
-        Arrays.sort(player, checker);
+        Arrays.sort(player, myComparator);
         for (int i = 0; i < player.length; i++) {
             System.out.printf("%s %s\n", player[i].name, player[i].score);
         }

@@ -1,7 +1,6 @@
 package hackerrank.CrackingTheCodingInterview;
 
 public class Primality {
-
     static String primality(int n) {
         if(n<2){
             return "Not prime";

@@ -7,8 +7,8 @@ public class MakingAnagrams {
 
     static int makeAnagram(String a, String b) {
         /* For each string, create an array of the count of each character */
-        int [] array1 = createFilledArray(a);
-        int [] array2 = createFilledArray(b);
+        int [] array1 = createCharHistogram(a);
+        int [] array2 = createCharHistogram(b);
 
         /* Count number of deletions we need to make the Strings anagrams of each other */
         int deletions = 0;
@@ -21,7 +21,7 @@ public class MakingAnagrams {
 
     /* Creates an array with the count of each character */
 
-    private static int [] createFilledArray(String str) {
+    private static int [] createCharHistogram(String str) {
         int [] array = new int[NUM_LETTERS];
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
